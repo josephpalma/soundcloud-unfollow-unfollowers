@@ -10,6 +10,7 @@ var map = {};
 var splitNames = (names) => {
     finalName = '';
     names.forEach((letter) => {
+        i++;
         if(letter === '\n' || letter.length === 0) {
             return;
         }
@@ -18,7 +19,6 @@ var splitNames = (names) => {
         } else {
             finalName = finalName.concat(letter);
         }
-        i++;
     });
     return finalName;
 };
@@ -28,7 +28,7 @@ var getPageOfUsers = () => {
 };
 
 var autoScroll = (pause) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         var interval = setInterval(function() {
             var scrolled = window.pageYOffset;
             var scroll_size = document.body.scrollHeight;
@@ -37,7 +37,7 @@ var autoScroll = (pause) => {
             if (scroll_remaining <= window.innerHeight) {
                 clearInterval(interval);
                 resolve(interval);
-            } else{
+            } else {
                 window.scrollBy(0, window.innerHeight);
             };                
         }, pause);

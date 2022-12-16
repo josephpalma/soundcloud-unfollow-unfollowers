@@ -1,8 +1,6 @@
 //run in soundcloud.com/USER/following
 var currentUsers = null;
-var btns = null;
 var name = '';
-var isFollowing = '';
 var unfollowed = 0;
 
 var getPageOfUsers = () => {
@@ -26,7 +24,7 @@ var splitNames = (names) => {
 };
 
 var autoScroll = (pause) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         var interval = setInterval(function() {
             var scrolled = window.pageYOffset;
             var scroll_size = document.body.scrollHeight;
@@ -75,7 +73,7 @@ var main = async () => {
     console.log('STARTING... this may take a couple minutes');
     await unfollowUnfollowers();
     console.log('Successfully unfollowed ', unfollowed, ' users');
-    console.log('To continue unfollowing, please refresh and start over on the followers page');
+    console.log('To continue unfollowing, run main(); in this console');
 }
 
 main();
