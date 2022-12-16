@@ -1,4 +1,4 @@
-//run in /followers
+//run in soundcloud.com/USER/followers
 var followersNum = document.getElementsByTagName("title")[0].innerHTML.split('|')[1].split(' ')[1];
 var users = null;
 var i = 0;
