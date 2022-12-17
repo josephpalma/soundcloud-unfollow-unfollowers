@@ -1,27 +1,9 @@
 //run in soundcloud.com/USER/followers
 var followersNum = document.getElementsByTagName("title")[0].innerHTML.split('|')[1].split(' ')[1];
 var users = null;
-var i = 0;
-var splitName = '';
-var finalName = '';
-var name = '';
 var map = {};
-
-var splitNames = (names) => {
-    finalName = '';
-    names.forEach((letter) => {
-        i++;
-        if(letter === '\n' || letter.length === 0) {
-            return;
-        }
-        if (letter.includes('\n')) {
-            finalName = finalName.concat(letter.split('\n')[0]);
-        } else {
-            finalName = finalName.concat(letter);
-        }
-    });
-    return finalName;
-};
+var i = 0;
+var finalName = '';
 
 var getPageOfUsers = () => {
     return document.querySelectorAll('a.sc-link-primary'); 
@@ -50,13 +32,10 @@ var getUnfollowers = async () => {
 
     await autoScroll(2000);
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         users = getPageOfUsers();
         users.forEach((user) => { 
-            name = user.text; 
-            splitName = name.split('\n');
-            splitName = name.split(' ');
-            map[splitNames(splitName)] = i;
+            map[user.text.split('\n')[1].split(' ').filter((word) => word != '').join().replaceAll(',', ' ')] = i;
             i++;
         });
         resolve(map);
@@ -66,7 +45,5 @@ var getUnfollowers = async () => {
 await getUnfollowers();
 
 console.log('\nDONE\n');
+console.log(map);
 console.log('\nTO UNFOLLOW, NAVIAGTE TO THE "FOLLOWING" TAB AND RUN UNFOLLOWUNFOLLOWERS()\n');
-
-
-
