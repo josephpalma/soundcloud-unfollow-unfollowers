@@ -13,4 +13,4 @@ To list all non-followers without unfollowing them, complete step 1, once it's f
 
 Happy unfollowing!
 
-Check out my <a href="https://www.soundcloud.com/deejaypalms">my music on soundcloud</a>, I promise I'll folllow you back 😇
+Check out my <a href="https://www.soundcloud.com/palmsaudio">my music on soundcloud</a>, I promise I'll folllow you back 😇
