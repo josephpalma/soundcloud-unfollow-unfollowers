@@ -30,15 +30,6 @@ var listPage = () => {
         if (!map[name]) {
             nonMutuals[name] = j;
             j++;
-            if (!listOnly) {
-                console.log('unfollowing', name);
-                var btn = userNode.parentNode.parentNode.querySelector('button.sc-button-follow');
-                var following = btn.getAttribute('aria-label'); 
-                if (following == 'Unfollow') { 
-                    btn.click(); 
-                    unfollowed++;
-                }
-            }
         }
     });
 

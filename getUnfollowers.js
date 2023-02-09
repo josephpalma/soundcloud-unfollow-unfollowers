@@ -45,5 +45,4 @@ var getUnfollowers = async () => {
 await getUnfollowers();
 
 console.log('\nDONE\n');
-console.log(map);
 console.log('\nTO UNFOLLOW, NAVIAGTE TO THE "FOLLOWING" TAB AND RUN UNFOLLOWUNFOLLOWERS()\n');
